@@ -27,9 +27,9 @@ Things you may want to cover:
 
 |Column|Type|Options|
 |------|----|-------|
-|email|string|null: false, foreign_key: true|
-|encrypted_password|string|null: false, foreign_key: true|
-|name|string|null: false, foreign_key: true|
+|email|string|null: false|
+|encrypted_password|string|null: false|
+|name|string|null: false|
 
 ### Association
 - has_many :members
