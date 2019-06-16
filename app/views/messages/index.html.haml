@@ -1,49 +1,19 @@
-.Header
-  .Header__logo
-    グループを作成しました
-    
 .Contents
   .Contents__chat-side
-    .Contents__chat-side__side-header
-      .Contents__chat-side__side-header__user-name
-        taro
-      .Contents__chat-side__side-header__user-menu
-        = link_to new_group_path do
-          = fa_icon 'edit'
-        = link_to edit_user_path(current_user) do
-          = fa_icon 'cog' , class: 'icon'
-    .Contents__chat-side__groups
-      .Contents__chat-side__groups__group
-        .Contents__chat-side__groups__group__name
-          group1
-        .Contents__chat-side__groups__group__latest-message
-          おはよう
+    = render partial: "sidebar"
   .Contents__chat-main
     .Contents__chat-main__main-header
       .Contents__chat-main__main-header__current-group
         .Contents__chat-main__main-header__current-group__name
-          group1 
+          = @group.name
         .Contents__chat-main__main-header__current-group__member-list
           .Contents__chat-main__main-header__current-group__member-list__member
-            Member : taro
+            Member :  
+            - @group.group_users.each do |group_user|
+              = group_user.user.name
       .Contents__chat-main__main-header__edit-btn
         Edit
     .Contents__chat-main__messages
-      .Contents__chat-main__messages__message
-        .Contents__chat-main__messages__message__upper-info
-          .Contents__chat-main__messages__message__upper-info__user
-            ziro
-          .Contents__chat-main__messages__message__upper-info__date
-            2013.1.1
-        .Contents__chat-main__messages__message__text
-          さいこう
+      = render @messages
     .Contents__chat-main__form
-      .Contents__chat-main__form__new_message
-        .Contents__chat-main__form__new_message__input-box
-          .Contents__chat-main__form__new_message__input-box__text
-            type a message
-          .Contents__chat-main__form__new_message__input-box__image-label
-            = fa_icon 'image'
-        .Contents__chat-main__form__new_message__submit-btn
-          send
-      
+      = render partial: "chat-form"
