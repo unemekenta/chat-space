@@ -1,23 +1,20 @@
-%html
-  %head
-  %body 
-    .Contents
-      .Contents__chat-side
-        = render partial: "sidebar"
-      .Contents__chat-main
-        .Contents__chat-main__main-header
-          .Contents__chat-main__main-header__current-group
-            .Contents__chat-main__main-header__current-group__name
-              = @group.name
-            .Contents__chat-main__main-header__current-group__member-list
-              .Contents__chat-main__main-header__current-group__member-list__member
-                Member :  
-                - @group.group_users.each do |group_user|
-                  = group_user.user.name
-          .Contents__chat-main__main-header__edit-btn
-            Edit
-        .Contents__chat-main__messages
-          = render @messages
-        .Contents__chat-main__form
-          = render partial: "chat-form"
-  %footer
+.Contents
+  .Contents__chat-side
+    = render partial: "sidebar"
+  .Contents__chat-main
+    .Contents__chat-main__main-header
+      .Contents__chat-main__main-header__current-group
+        .Contents__chat-main__main-header__current-group__name
+          = @group.name
+        .Contents__chat-main__main-header__current-group__member-list
+          .Contents__chat-main__main-header__current-group__member-list__member
+            Member :  
+            - @group.group_users.each do |group_user|
+              = group_user.user.name
+      .Contents__chat-main__main-header__edit-btn
+        Edit
+    .Contents__chat-main__messages
+      = render @messages
+    .Contents__chat-main__form
+      = render partial: "chat-form"
+
