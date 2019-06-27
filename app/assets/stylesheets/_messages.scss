@@ -66,40 +66,42 @@ html {
         height: 100vh;
         overflow: scroll;
         &__main-header {
-         clear: both;
-         padding: 0 40px;
-         height: 120px;
-         background-color: $white;
+          width: 100%;
+          clear: both;
+          padding: 0 40px;
+          height: 120px;
+          background-color: $white;
+          display: inline-block;
+          border-bottom: 1px solid #eeeeee;
           &__current-group {
             color:#333333;
             float: left;
             &__name {
-                font-size:20px;
-                padding: 35px 0 12px 0;
+              font-size:20px;
+              padding: 35px 0 12px 0;
             }
             &__member-list {
-                font-size:12px;
-                color: $mid_grey;
-                &__member{
-                }
+              font-size:12px;
+              color: $mid_grey;
+              &__member{
+              }
             }
-            &__edit-btn {
-            }
+          }
+          &__edit-btn {
             margin-top: 28px; 
-            height: 40px;
             padding: 0 20px;
+            height: 40px;
             font-size: 12px;
             color: $strong-blue;
             float: right;
+            position: absolute;
+            right: 20px;
             line-height: 40px;
             border: solid 1px $strong-blue;
           }
         }
         &__messages {
           height: 100%;
-          display: block;
-          clear: both;
-          border-top: 1px solid #eeeeee;
           padding: 46px 0px 40px 40px;
           &__message {
             &__upper-info {
