@@ -13,8 +13,8 @@ $(function(){
                   </div>
                   <div class="Contents__chat-main__messages__message__text">
                     <p class="lower-message__content">
-                      <a>${content}</a><br>
-                      <a>${img}</a>
+                      <div>${content}</div><br>
+                      <div>${img}</div>
                     </p>
                   </div>
                 </div>`
@@ -35,7 +35,7 @@ $(function(){
     .done(function(message){
       var html = buildHTML(message);
       $('.Contents__chat-main__messages').append(html);
-      $('.form__message').val('');
+      $('#new_message')[0].reset();
       $('.Contents__chat-main').animate({ scrollTop: $('.Contents__chat-main')[0].scrollHeight});
       return false
     })
