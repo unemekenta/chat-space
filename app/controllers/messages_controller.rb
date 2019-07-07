@@ -20,6 +20,7 @@ class MessagesController < ApplicationController
       render :index
     end
   end
+
   
   private
   
@@ -31,4 +32,4 @@ class MessagesController < ApplicationController
     @group = Group.find(params[:group_id])
   end
 
-end
+  end

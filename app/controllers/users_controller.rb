@@ -1,18 +1,22 @@
 class UsersController < ApplicationController
-  def edit
-  end
 
-  def update
-    if current_user.update(user_params)
-      redirect_to root_path
-    else
-      render :edit
+  #インクリメンタルサーチの設定
+    def index
     end
-  end
+  
+  #もしcurrent_userがアップデートしたら、rootにpath。
+    def update
+      if current_user.update(user_params)
+        redirect_to root_path
+      else
+  #アップデートできなかったら、テキスト内容そのまま残して編集。
+        render :edit
+      end
+    end
 
-  private
-
-  def user_params
-    params.require(:user).permit(:name, :email)
+    private
+    def user_params
+      params.require(:user).permit(:name, :email)
+    end
+  
   end
-end
