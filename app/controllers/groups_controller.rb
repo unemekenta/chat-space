@@ -31,9 +31,9 @@ class GroupsController < ApplicationController
 
   def search
     @users = User.where('name LIKE(?)', "%#{params[:keyword]}%" )
-      respond_to do |format|
-        format.json { render 'index', json: @users }
-      end
+    respond_to do |format|
+      format.json { render 'index', json: @users }
+    end
   end
 
   private
