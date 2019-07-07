@@ -8,4 +8,4 @@
         - @group.group_users.each do |group_user|
           = group_user.user.name
   .Contents__chat-main__main-header__edit-btn
-    Edit
+    = link_to "Edit", edit_group_path(current_user)
