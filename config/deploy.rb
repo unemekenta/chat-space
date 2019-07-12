@@ -32,5 +32,3 @@ namespace :deploy do
     invoke 'unicorn:restart'
   end
 end
-
-set :bundle_flags, "--quiet --binstubs --shebang ruby-local-exec"
