@@ -20,10 +20,15 @@
           %label.chat-group-form__label{for: "chat_group_チャットメンバー"} チャットメンバー
         .chat-group-form__field--right
           .chat-group-users
-          -# .chat-group-user.clearfix
-          #chat-group-user-22
-            -# <input name='chat_group[user_ids][]' type='hidden' value='22'>
-            .chat-group-user__name
+            .chat-group-user
+              %input{:name => 'group[user_ids][]', :type => "hidden", :id => current_user.id, :value => current_user.id}
+              .chat-group-user__name
+                = current_user.name
+            - @group.users.each do |user|
+              - if user.id != current_user.id
+                %input{:name => 'group[user_ids][]', :type => "hidden", :id => user.id, :value => user.id}
+                  .chat-group-user
+                    = user.name
             #user-add-result
       .chat-group-form__field.clearfix
         .chat-group-form__field--left
