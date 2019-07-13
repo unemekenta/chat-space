@@ -1,7 +1,7 @@
 $(function() {
 
 var search_list = $("#user-search-result");
-var add_list = $(".chat-group-users");
+var add_list = $("#user-add-result");
 
 function appendUser(user) {
    var html = `<div class="chat-group-user clearfix">
@@ -12,9 +12,9 @@ function appendUser(user) {
  }
 
 function appendErrMsgToHTML(msg) {
-   var html = `<li>
+   var html = `
                  <div class='listview__element--right-icon'>${ msg }</div>
-               </li>`
+               `
    search_list.append(html);
  }
 
@@ -28,7 +28,6 @@ function appendErrMsgToHTML(msg) {
     add_list.append(html);
   }
 
-$(document).on('turbolinks:load', function(){
 $("#user-search-field").on("keyup", function(e) {
   e.preventDefault();
   var input = $("#user-search-field").val();
@@ -62,6 +61,5 @@ $("#user-search-field").on("keyup", function(e) {
   .fail(function() {
     alert('ユーザー検索に失敗しました');
   })
-});
 });
 });
